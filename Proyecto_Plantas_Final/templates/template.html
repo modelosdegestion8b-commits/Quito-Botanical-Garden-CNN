@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Predicción</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        h1 { text-align: center; color: #333; }
+        .result-box { margin-top: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background-color: #fdfdfd; cursor: pointer; }
+        .result-box:hover { background-color: #e8f5e9; }
+        .scientific-name { text-align: center; font-style: italic; font-size: 1.2em; color: #333; margin-bottom: 10px; }
+        .taxon-details { margin: 10px 0; padding: 10px; background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; }
+        .taxon-details p { margin: 5px 0; font-size: 0.9em; color: #555; }
+        .probability { background-color: #43a047; color: #fff; padding: 5px 10px; border-radius: 5px; font-size: 0.9em; text-align: center; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resultados de Predicción</h1>
+        {% for item in predictions %}
+        <a href="/planta/{{ item.scientific_name | replace(' ', '%20') }}" style="text-decoration: none;">
+            <div class="result-box">
+                <div class="scientific-name">{{ item.scientific_name }}</div>
+                <div class="probability">Probabilidad: {{ item.probability | round(2) }}%</div>
+                <div class="taxon-details">
+                    <p><strong>Reino:</strong> {{ item.reino }}</p>
+                    <p><strong>Filo:</strong> {{ item.filo }}</p>
+                    <p><strong>Clase:</strong> {{ item.clase }}</p>
+                    <p><strong>Orden:</strong> {{ item.orden }}</p>
+                    <p><strong>Familia:</strong> {{ item.familia }}</p>
+                    <p><strong>Género:</strong> {{ item.genero }}</p>
+                    <p><strong>Especie:</strong> {{ item.especie }}</p>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</body>
+</html>

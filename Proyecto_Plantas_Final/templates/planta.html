@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ nombre_cientifico }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        h1 { text-align: center; color: #333; }
+        .photos { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+        img { width: 300px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        .description { margin-top: 20px; }
+        .description p { margin: 10px 0; font-size: 1em; color: #555; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ nombre_cientifico }}</h1>
+        <div class="photos">
+            {% for foto in info.fotos %}
+            <img src="{{ foto }}" alt="{{ nombre_cientifico }}">
+            {% endfor %}
+        </div>
+        <div class="description">
+            <p><strong>Descripción:</strong> {{ info.descripcion }}</p>
+            <p><strong>Otros Detalles:</strong> {{ info.otros_detalles }}</p>
+        </div>
+    </div>
+</body>
+</html>

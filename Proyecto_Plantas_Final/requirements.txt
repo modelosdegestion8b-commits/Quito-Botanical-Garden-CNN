@@ -1,0 +1,8 @@
+Flask==2.2.2
+Werkzeug==2.2.3
+torch==2.0.0+cpu
+torchvision==0.15.0+cpu
+Pillow==9.3.0
+google-cloud-storage
+protobuf==5.26.1
+numpy==1.23.5

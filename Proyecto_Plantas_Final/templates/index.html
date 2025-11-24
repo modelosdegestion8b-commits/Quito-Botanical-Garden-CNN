@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Inicio - Jardín Botánico de Quito</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon" />
+
+  <!-- Firebase UMD compat -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey:    "AIzaSyBa_JIX0-kA80kuaVSD1JDkS2tDuUC48Jk",
+      authDomain:"jbqloging.firebaseapp.com",
+      projectId: "jbqloging",
+      storageBucket:"jbqloging.appspot.com",
+      messagingSenderId:"692913319420",
+      appId:     "1:692913319420:web:ba2e86c4dd6a067bb59679"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("btn-jugar").addEventListener("click", async () => {
+        const user = firebase.auth().currentUser;
+        if (user) {
+          // Ya autenticado
+          window.location.href = "/pagina_juego";
+        } else {
+          // Abrimos popup, no redirect
+          try {
+            const provider = new firebase.auth.GoogleAuthProvider();
+            const result = await firebase.auth().signInWithPopup(provider);
+            console.log("🔐 Login con popup exitoso:", result.user.email);
+            // Después de cerrar popup, vamos al juego
+            window.location.href = "/pagina_juego";
+          } catch(err) {
+            console.error("❌ Error en popup:", err);
+            alert("No se pudo iniciar sesión.");
+          }
+        }
+      });
+    });
+  </script>
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #eafaf1;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .header, .form-container, .footer {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    h1 { color: #2e7d32; }
+    button {
+      background: #43a047; color: #fff;
+      border: none; border-radius: 8px;
+      padding: 10px 20px; cursor: pointer;
+    }
+    button:hover { background: #388e3c; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Bienvenido al Jardín Botánico de Quito</h1>
+    <p>Sube o toma una foto para identificar tu planta.</p>
+  </div>
+  <div class="form-container">
+    <form action="/predict" method="post" enctype="multipart/form-data">
+      <label for="file">Selecciona o toma una foto:</label><br>
+      <input type="file" name="file" id="file" accept="image/*" required><br><br>
+      <button type="submit">Analizar Imagen</button>
+      <button type="button" onclick="location.href='/navegacion'">Búsqueda</button>
+    </form>
+  </div>
+  <div class="footer">
+    <p>Powered by Pacheco Galarza Daniel © 2025</p>
+  </div>
+  <button id="btn-jugar">Iniciar juego</button>
+</body>
+</html>
+
+

@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+    transition: background-color 0.5s ease-in-out;
+}
+
+/* Contenedor */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animación de entrada suave */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tarjetas de plantas */
+.planta {
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.planta:hover {
+    box-shadow: 4px 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Información principal */
+.info-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estado de la planta */
+.estado {
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.7s ease-in-out;
+}
+
+/* Animación de actualización */
+.estado.actualizado {
+    background-color: #00ff00; /* Verde brillante */
+}
+
+/* Colores según estado */
+.visto { color: green; }
+.en-proceso { color: orange; }
+.a-la-espera { color: red; }
+
+/* Animación para desplegar detalles */
+.info-extra {
+    display: none;
+    padding-top: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.info-extra.mostrar {
+    opacity: 1;
+    display: block;
+}
+
+/* Efecto de aparición para nuevas plantas */
+.planta.nueva {
+    opacity: 0;
+    animation: aparecer 0.7s ease-in-out forwards;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Imágenes dentro de las tarjetas */
+img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+#progreso-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#barra-progreso {
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#barra-llena {
+    height: 100%;
+    width: 0%;
+    background-color: #4caf50;
+    transition: width 0.5s;
+}

@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explora el Jardín Botánico</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #eafaf1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #2e7d32;
+            font-size: 2.5em;
+        }
+        .sections {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .section-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 250px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .section-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+        .section-card h2 {
+            color: #388e3c;
+            font-size: 1.2em;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Explora las Secciones del Jardín Botánico</h1>
+        <p>Selecciona una sección para obtener más información.</p>
+    <!doctype html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explora el Jardín Botánico</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #eafaf1;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #2e7d32;
+            font-size: 2.5em;
+        }
+        .sections {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .section-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 220px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .section-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+        .section-card h2 {
+            color: #388e3c;
+            font-size: 1.2em;
+            margin: 0;
+        }
+        #seccionPlantas {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .plantacard {
+            background: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 10px;
+            align-items: center;
+        }
+        .plantacard img {
+            width: 100%;
+            border-radius: 5px;
+            object-fit: cover;
+            height: 80px;
+        }
+        .plantacard h3 {
+            margin: 0 0 5px;
+            font-size: 1.1em;
+            color: #2e7d32;
+        }
+        .plantacard p {
+            margin: 2px 0;
+            font-size: 0.9em;
+            color: #555;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Explora las Secciones del Jardín Botánico</h1>
+        <p>Ahora puedes ver las plantas por su entorno. Selecciona una zona:</p>
+    </div>
+
+```
+<div class="sections">
+    <div class="section-card" onclick="showSection('Humedales de la Sierra')">
+        <h2>Humedales de la Sierra</h2>
+    </div>
+    <div class="section-card" onclick="showSection('Bosque Nublado')">
+        <h2>Bosque Nublado</h2>
+    </div>
+    <div class="section-card" onclick="showSection('Páramo Arbustivo')">
+        <h2>Páramo Arbustivo</h2>
+    </div>
+    <div class="section-card" onclick="showSection('Matorral Seco Espinoso')">
+        <h2>Matorral Seco Espinoso</h2>
+    </div>
+    <div class="section-card" onclick="showSection('Orquideario Clima Cálido')">
+        <h2>Orquideario Cálido</h2>
+    </div>
+    <div class="section-card" onclick="showSection('Orquideario Clima Frío')">
+        <h2>Orquideario Frío</h2>
+    </div>
+    <div class="section-card" onclick="showSection('Invernadero Plantas Carnívoras')">
+        <h2>Carnívoras</h2>
+    </div>
+    <div class="section-card" onclick="showSection('Invernadero Tropical')">
+        <h2>Tropical</h2>
+    </div>
+    <div class="section-card" onclick="showSection('Jardín Japonés')">
+        <h2>Jardín Japonés</h2>
+    </div>
+    <div class="section-card" onclick="showSection('Museo del Bonsái')">
+        <h2>Museo del Bonsái</h2>
+    </div>
+</div>
+
+<div id="seccionPlantas"></div>
+
+<div class="footer">
+    <p>Recuerda no arrancar las plantas y respetar los límites y las caminerías.</p>
+</div>
+<div id="seccionPlantas"></div>
+
+<div class="footer">
+    <p>Recuerda no arrancar las plantas y respetar los límites y las caminerías.</p>
+</div>
+
+<script>
+// Mapeo de secciones a ID. Asegúrate de actualizar según JSON
+const sectionIds = {
+  'Humedales de la Sierra': 1,
+  'Bosque Nublado': 2,
+  'Páramo Arbustivo': 3,
+  'Matorral Seco Espinoso': 4,
+  'Orquideario Clima Cálido': 5,
+  'Orquideario Clima Frío': 6,
+  'Invernadero Plantas Carnívoras': 7,
+  'Invernadero Tropical': 8,
+  'Jardín Japonés': 9,
+  'Museo del Bonsái': 10
+};
+
+async function showSection(sectionName) {
+    const container = document.getElementById('seccionPlantas');
+    container.innerHTML = `<h2>Plantas en ${sectionName}</h2>`;
+    const secId = sectionIds[sectionName];
+    let found = false;
+    try {
+        const response = await fetch('/api/plantas');
+        const plantas = await response.json();
+        Object.keys(plantas).forEach(name => {
+            const datos = plantas[name];
+            const ubic = datos.ubicacion;
+            const match = Array.isArray(ubic)
+                          ? ubic.includes(secId)
+                          : ubic === secId;
+            if (match) {
+                found = true;
+                const card = document.createElement('div');
+                card.className = 'plantacard';
+                card.innerHTML = `
+                    <div class="fotos-planta">
+                      <img src="${datos.fotos[0]}" alt="${name} foto 1">
+                      ${datos.fotos[1] ? `<img src="${datos.fotos[1]}" alt="${name} foto 2">` : ''}
+                    </div>
+                    <div>
+                      <h3>${name}</h3>
+                      <p>🌍 Ubicación: ${datos.otros_detalles}</p>
+                      <p>📘 ${datos.descripcion}</p>
+                    </div>
+                `;
+                container.appendChild(card);
+            }
+        });
+        if (!found) {
+            container.innerHTML += '<p>No se encontraron plantas en esta sección.</p>';
+        }
+    } catch (err) {
+        console.error('Error al cargar plantas:', err);
+        container.innerHTML = '<p>Error cargando las plantas. Intenta recargar la página.</p>';
+    }
+}
+</script>
+```
+
+</body>
+</html>
+
+</body>
+</html>
