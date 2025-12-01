@@ -220,3 +220,6 @@ if __name__ == "__main__":
 
 # firebase_admin.initialize_app(cred)
 
+# firebase_admin.initialize_app(cred)
+
+
