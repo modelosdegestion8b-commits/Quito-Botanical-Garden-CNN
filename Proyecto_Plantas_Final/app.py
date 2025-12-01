@@ -170,7 +170,7 @@ def registrar_usuario(uid, nombre, email):
     # SEGURIDAD: Usamos os.getenv para no quemar contraseñas en el código
     db_host = os.getenv("DB_HOST", "localhost")
     db_user = os.getenv("DB_USER", "postgres")
-    db_pass = os.getenv("DB_PASS", "tu_password_local") # Cámbialo solo en tu PC
+    db_pass = os.getenv("DB_PASS", "tu_password_local") # se lo puede cambiar 
     db_name = os.getenv("DB_NAME", "jardincnn")
     
     try:
@@ -211,7 +211,7 @@ def liberar_recursos(response):
     return response
 
 # ================= EJECUCIÓN =================
-# Esto SIEMPRE va al final
+# Esto SIEMPRE va al final, no se porque pero solo asi funciona jejeje
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port)
@@ -219,3 +219,4 @@ if __name__ == "__main__":
 ##esto esta ducado y causa errores 
 
 # firebase_admin.initialize_app(cred)
+
